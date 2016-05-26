@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>time</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="Author" content="netease">
+    <meta name="Version" content="1.0">
+    <link rel="shortcut icon" href="http://mimg.127.net/pub/common/favicon/yanxuan/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<a href="javascript:;" id="J-stopTimer">停止</a>
+<p id="J-second-show"><s></s></p>
+<script type="text/javascript" src="http://mimg.127.net/pub/common/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="PSC_C_timer.js"></script>
+<script type="text/javascript">
+    $(function(){
+        everyTime($('body'),'6s',function(){
+            console.log(12);
+        });
+
+        oneTime($('body'),'6s',function(){
+            console.log(12);
+        });
+
+        $('#J-stopTimer').on('click',function(){
+            stopTime();
+        });
+    });
+
+</script>
+</body>
+</html>

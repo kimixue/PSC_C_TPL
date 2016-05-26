@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webapp开发模版</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="Author" content="netease">
+    <meta name="Version" content="1.0">
+    <link rel="shortcut icon" href="http://mimg.127.net/pub/common/favicon/yanxuan/favicon.ico" type="image/x-icon"/>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        .m-loading{
+            display: block;
+            width:116px;
+            height: 80px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-left:-58px;
+            margin-top:-40px;
+        }
+        .m-pace-tips{
+            text-align: center;
+        }
+        .spinner {
+            width: 60px;
+            height: 60px;
+
+            position: relative;
+            margin:auto;
+        }
+
+        .double-bounce1, .double-bounce2 {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #a4262a;
+            opacity: 0.6;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            -webkit-animation: bounce 2.0s infinite ease-in-out;
+            animation: bounce 2.0s infinite ease-in-out;
+        }
+
+        .double-bounce2 {
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+
+        @-webkit-keyframes bounce {
+            0%, 100% { -webkit-transform: scale(0.0) }
+            50% { -webkit-transform: scale(1.0) }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(0.0);
+                -webkit-transform: scale(0.0);
+            } 50% {
+                  transform: scale(1.0);
+                  -webkit-transform: scale(1.0);
+              }
+        }
+        /*以上为加载动画css*/
+
+
+    </style>
+</head>
+<body>
+<!--加载动画-->
+<div id="J-loading" class="m-loading">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div class="m-pace-progress">
+        <div class="m-pace-tips">加载中,请稍等~~</div>
+        <div class="m-pace-nums"></div>
+    </div>
+</div>
+<script type="text/javascript" src="PSC_C_loading.js"></script>
+<script type="text/javascript">
+    $(function(){
+        PSC_ImgLoad({
+            resources:[],  //需要预先加载的图片url
+            onStart:function(total){ //加载开始回调函数  加载的个数
+              
+            },
+            onProgress:function(current,total){
+              //正在加载回调函数
+              //total 加载文件的总个数
+            },
+            onComplete:function(total){
+              //加载完毕回调函数，传入参数total
+            }
+        })
+    })
+</script>
+</body>
+</html>

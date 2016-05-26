@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>弹出窗口</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="Author" content="netease">
+    <meta name="Version" content="1.0">
+    <style>
+    body,
+    html {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .m-dialog {
+        display: none;
+        width: 500px;
+        height: 300px;
+        background-color: #FFF;
+    }
+    /*dialog animation*/
+    
+    .fadeIn {
+        -webkit-animation: fadeIn 0.7s;
+        animation: fadeIn 0.7s;
+    }
+    
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    body .fadeInDown {
+        -webkit-animation: fadeInDown 0.7s;
+        animation: fadeInDown 0.7s;
+    }
+    
+    @-webkit-keyframes fadeInDown {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+        to {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+        to {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+
+    .m-page{
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="home"></div>
+    <div id="page-oldUser" class="m-page"></div>
+
+
+    <script type="text/javascript" src="http://mimg.127.net/pub/common/js/jquery.min.js"></script>
+    <script type="text/javascript" src="PSC_C_dialogApp.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        dialog.show({
+            id:$('#J-newUser'),
+            closeId:$('.J-close'),
+            showAnima:'fadeInDown'  //fadeInDown
+        })
+    });
+    </script>
+</body>
+
+</html>

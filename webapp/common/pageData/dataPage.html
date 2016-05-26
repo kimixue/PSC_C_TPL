@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="Author" content="netease">
+    <meta name="Version" content="1.0">
+    <link rel="shortcut icon" href="http://mimg.127.net/pub/common/favicon/yanxuan/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+
+<div>
+    <ul id="appLis">
+        <li>
+            <h2>{title}</h2>
+            <p>{desc}</p>
+            <img data-original="{imgUrl}" src="" class="J-lazyload" alt="name"/>
+            <a href="{url}" class="J-test">{sendBtn}</a>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="http://mimg.127.net/pub/common/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="PSC_lazyload_1.0.2.js"></script>
+<script type="text/javascript" src="PSC_C_pageData.js"></script>
+<script type="text/javascript">
+    $(function(){
+        pageData({
+            id:$('#appLis'),
+            data:[{
+                title:'数据循环',
+                desc:'自定义数据循环',
+                url:'http://mai.163.com',
+                imgUrl:'01.jpg',
+                sendBtn:'发送验证码'
+            },{
+                title:'12',
+                desc:'33444',
+                url:'http://mai.163.com',
+                imgUrl:'02.jpg',
+                sendBtn:'45453'
+            },{
+                title:'12',
+                desc:'33444',
+                url:'http://mai.163.com',
+                imgUrl:'03.jpg',
+                sendBtn:'45453'
+            },{
+                title:'12',
+                desc:'33444',
+                url:'http://mai.163.com',
+                imgUrl:'04.jpg',
+                sendBtn:'45453'
+            },{
+                title:'12',
+                desc:'33444',
+                url:'http://mai.163.com',
+                imgUrl:'05.jpg',
+                sendBtn:'45453'
+            },{
+                title:'12',
+                desc:'33444',
+                url:'http://mai.163.com',
+                imgUrl:'06.jpg',
+                sendBtn:'45453'
+            },{
+                title:'12',
+                desc:'33444',
+                url:'http://mai.163.com',
+                imgUrl:'09.jpg',
+                sendBtn:'45453'
+            }],
+            callback:function(){
+                console.log(12);
+
+                PSC_lazyload({
+                    class:'J-lazyload'
+                });
+            }
+        });
+
+        $('.J-test').on('click',function(){
+            alert(12);
+        });
+
+    });
+</script>
+</body>
+</html>
